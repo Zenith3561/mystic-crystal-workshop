@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #faf7f2;
+  --color-gold: #b69249;
+  --color-bronze: #8a6d35;
+  --color-ink: #2b2622;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body), "Noto Sans TC", sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), "Noto Serif TC", serif;
+}
