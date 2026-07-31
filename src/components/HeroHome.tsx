@@ -12,9 +12,9 @@ export default function HeroHome() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-xs tracking-[0.35em] uppercase text-gold mb-6"
+          className="text-sm tracking-[0.35em] uppercase text-gold mb-6"
         >
-          Hong Kong crystal boutique 香港水晶專門店
+          Hong Kong Crystal Boutique 香港水晶專門店
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
@@ -40,15 +40,15 @@ export default function HeroHome() {
         >
           <Link
             href="/shop"
-            className="rounded-xl bg-gold px-7 py-3 text-sm text-white hover:bg-bronze transition-colors"
+            className="rounded-xl bg-gold px-7 py-3 text-base text-white hover:bg-bronze transition-colors"
           >
-            shop crystals 選購水晶
+            Shop Crystals 選購水晶
           </Link>
           <Link
             href="/about"
-            className="rounded-xl border border-gold/50 px-7 py-3 text-sm text-gold hover:bg-gold/10 transition-colors"
+            className="rounded-xl border border-gold/50 px-7 py-3 text-base text-gold hover:bg-gold/10 transition-colors"
           >
-            our story 品牌故事
+            Our Story 品牌故事
           </Link>
         </motion.div>
       </div>

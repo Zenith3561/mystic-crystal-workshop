@@ -24,10 +24,10 @@ export default function ProductCard({ product }: { product: Product }) {
           </span>
         )}
       </div>
-      <h3 className="text-sm text-ink leading-snug mb-1">
+      <h3 className="text-base text-ink leading-snug mb-1">
         {product.nameEn} {product.nameZh}
       </h3>
-      <p className="text-sm text-gold">{formatPrice(product.priceHkd)}</p>
+      <p className="text-base text-gold">{formatPrice(product.priceHkd)}</p>
     </motion.article>
   )
 }

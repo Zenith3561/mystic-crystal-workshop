@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-5 py-14">
       <FadeIn>
-        <p className="text-xs tracking-[0.35em] uppercase text-gold mb-4 text-center">our story 品牌故事</p>
+        <p className="text-sm tracking-[0.35em] uppercase text-gold mb-4 text-center">Our Story 品牌故事</p>
         <h1 className="font-display text-4xl md:text-5xl text-ink text-center mb-10">
           {brand.taglineEn}
           <span className="block text-2xl text-bronze mt-3">{brand.taglineZh}</span>
@@ -26,7 +26,7 @@ export default function AboutPage() {
       </FadeIn>
 
       <FadeIn delay={0.15}>
-        <div className="space-y-5 text-ink/75 leading-relaxed text-[15px] mb-16">
+        <div className="space-y-5 text-ink/75 leading-relaxed text-lg mb-16">
           <p>
             Mystic Crystal Workshop began with a simple belief: crystals do not need myths to be
             magical. Each specimen is millions of years of geology, light and colour — nature&apos;s
@@ -47,9 +47,9 @@ export default function AboutPage() {
         {philosophy.map((item, i) => (
           <FadeIn key={item.titleEn} delay={i * 0.1}>
             <div className="text-center px-2">
-              <h3 className="font-display text-xl text-bronze mb-1">{item.titleEn}</h3>
-              <p className="text-xs tracking-[0.3em] text-gold mb-3">{item.titleZh}</p>
-              <p className="text-sm text-ink/65 leading-relaxed">{item.bodyZh}</p>
+              <h3 className="font-display text-2xl text-bronze mb-1">{item.titleEn}</h3>
+              <p className="text-sm tracking-[0.3em] text-gold mb-3">{item.titleZh}</p>
+              <p className="text-base text-ink/65 leading-relaxed">{item.bodyZh}</p>
             </div>
           </FadeIn>
         ))}

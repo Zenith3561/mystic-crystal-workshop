@@ -18,21 +18,21 @@ export type Collection = {
 export const collections: Collection[] = [
   {
     slug: 'poetry-of-light',
-    nameEn: 'the poetry of light',
+    nameEn: 'The Poetry of Light',
     nameZh: '光影之詩',
     descEn: 'Crystals that catch and play with light — moonstone, labradorite, rainbow fluorite.',
     descZh: '捕捉光線嘅水晶——月亮石、拉長石、彩虹螢石。',
   },
   {
     slug: 'earths-origin',
-    nameEn: "the earth's origin",
+    nameEn: "The Earth's Origin",
     nameZh: '原初大地',
     descEn: 'Raw geodes and clusters, shaped by the earth over millions of years.',
     descZh: '原礦晶簇與晶洞，億萬年大地孕育而成。',
   },
   {
     slug: 'everyday-sanctuary',
-    nameEn: 'everyday sanctuary',
+    nameEn: 'Everyday Sanctuary',
     nameZh: '日常隨身',
     descEn: 'Palm stones and tumbled crystals to carry calm through your day.',
     descZh: '手把件與滾石，讓平靜隨身同行。',

@@ -12,10 +12,10 @@ export default function ContactPage() {
   return (
     <div className="mx-auto max-w-4xl px-5 py-14">
       <FadeIn>
-        <h1 className="font-display text-4xl text-ink mb-2">
-          contact <span className="text-gold">聯絡我們</span>
+        <h1 className="font-display text-5xl text-ink mb-2">
+          Contact <span className="text-gold">聯絡我們</span>
         </h1>
-        <p className="text-sm text-ink/60 mb-12">
+        <p className="text-base text-ink/60 mb-12">
           Questions about a crystal? We reply fast. 想查詢任何一件水晶，歡迎隨時聯絡。
         </p>
       </FadeIn>
@@ -24,25 +24,25 @@ export default function ContactPage() {
         <FadeIn delay={0.1}>
           <div className="space-y-6">
             <div>
-              <p className="text-xs tracking-[0.3em] uppercase text-gold mb-2">whatsapp</p>
+              <p className="text-sm tracking-[0.3em] uppercase text-gold mb-2">WhatsApp</p>
               <a
                 href={`https://wa.me/${brand.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-xl bg-gold px-6 py-3 text-sm text-white hover:bg-bronze transition-colors"
+                className="inline-block rounded-xl bg-gold px-6 py-3 text-base text-white hover:bg-bronze transition-colors"
               >
                 WhatsApp 即時查詢
               </a>
             </div>
             <div>
-              <p className="text-xs tracking-[0.3em] uppercase text-gold mb-2">email</p>
-              <a href={`mailto:${brand.email}`} className="text-sm text-ink/75 hover:text-gold transition-colors">
+              <p className="text-sm tracking-[0.3em] uppercase text-gold mb-2">Email</p>
+              <a href={`mailto:${brand.email}`} className="text-base text-ink/75 hover:text-gold transition-colors">
                 {brand.email}
               </a>
             </div>
             <div>
-              <p className="text-xs tracking-[0.3em] uppercase text-gold mb-2">hours 營業時間</p>
-              <p className="text-sm text-ink/75">Mon–Sun 10:00–20:00（網上商店全日營業）</p>
+              <p className="text-sm tracking-[0.3em] uppercase text-gold mb-2">Hours 營業時間</p>
+              <p className="text-base text-ink/75">Mon–Sun 10:00–20:00（網上商店全日營業）</p>
             </div>
           </div>
         </FadeIn>

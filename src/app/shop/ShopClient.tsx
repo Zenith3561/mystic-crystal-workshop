@@ -13,10 +13,10 @@ export default function ShopClient() {
   return (
     <div className="mx-auto max-w-6xl px-5 py-14">
       <FadeIn>
-        <h1 className="font-display text-4xl text-ink mb-2">
-          shop <span className="text-gold">選購水晶</span>
+        <h1 className="font-display text-5xl text-ink mb-2">
+          Shop <span className="text-gold">選購水晶</span>
         </h1>
-        <p className="text-sm text-ink/60 mb-10">
+        <p className="text-base text-ink/60 mb-10">
           Every piece hand-selected. 每一件都經人手挑選。
         </p>
       </FadeIn>
@@ -24,17 +24,17 @@ export default function ShopClient() {
       <div className="flex flex-wrap gap-3 mb-10">
         <button
           onClick={() => router.push('/shop')}
-          className={`rounded-full px-5 py-2 text-sm transition-colors ${
+          className={`rounded-full px-5 py-2 text-base transition-colors ${
             !active ? 'bg-gold text-white' : 'border border-gold/40 text-gold hover:bg-gold/10'
           }`}
         >
-          all 全部
+          All 全部
         </button>
         {collections.map((c) => (
           <button
             key={c.slug}
             onClick={() => router.push(`/shop?collection=${c.slug}`)}
-            className={`rounded-full px-5 py-2 text-sm transition-colors ${
+            className={`rounded-full px-5 py-2 text-base transition-colors ${
               active === c.slug ? 'bg-gold text-white' : 'border border-gold/40 text-gold hover:bg-gold/10'
             }`}
           >
@@ -52,7 +52,7 @@ export default function ShopClient() {
       </div>
 
       {shown.length === 0 && (
-        <p className="text-center text-ink/50 py-20">No products found. 此系列暫時沒有貨品。</p>
+        <p className="text-center text-base text-ink/50 py-20">No products found. 此系列暫時沒有貨品。</p>
       )}
     </div>
   )

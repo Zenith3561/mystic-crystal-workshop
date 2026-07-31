@@ -5,10 +5,10 @@ import { useState } from 'react'
 import { brand } from '@/lib/data'
 
 const links = [
-  { href: '/', en: 'home', zh: '主頁' },
-  { href: '/shop', en: 'shop', zh: '選購水晶' },
-  { href: '/about', en: 'about', zh: '關於我們' },
-  { href: '/contact', en: 'contact', zh: '聯絡我們' },
+  { href: '/', en: 'Home', zh: '主頁' },
+  { href: '/shop', en: 'Shop', zh: '選購水晶' },
+  { href: '/about', en: 'About', zh: '關於我們' },
+  { href: '/contact', en: 'Contact', zh: '聯絡我們' },
 ]
 
 export default function Nav() {
@@ -31,7 +31,7 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm text-ink/80 hover:text-gold transition-colors"
+              className="text-base text-ink/80 hover:text-gold transition-colors"
             >
               {l.en} <span className="text-gold/80">{l.zh}</span>
             </Link>
@@ -54,7 +54,7 @@ export default function Nav() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="text-sm text-ink/80"
+              className="text-base text-ink/80"
             >
               {l.en} <span className="text-gold/80">{l.zh}</span>
             </Link>

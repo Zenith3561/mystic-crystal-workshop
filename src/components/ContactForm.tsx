@@ -15,8 +15,8 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label htmlFor="name" className="block text-xs tracking-[0.3em] uppercase text-gold mb-2">
-          name 姓名
+        <label htmlFor="name" className="block text-sm tracking-[0.3em] uppercase text-gold mb-2">
+          Name 姓名
         </label>
         <input
           id="name"
@@ -28,8 +28,8 @@ export default function ContactForm() {
         />
       </div>
       <div>
-        <label htmlFor="message" className="block text-xs tracking-[0.3em] uppercase text-gold mb-2">
-          message 留言
+        <label htmlFor="message" className="block text-sm tracking-[0.3em] uppercase text-gold mb-2">
+          Message 留言
         </label>
         <textarea
           id="message"
@@ -43,11 +43,11 @@ export default function ContactForm() {
       </div>
       <button
         type="submit"
-        className="rounded-xl bg-gold px-7 py-3 text-sm text-white hover:bg-bronze transition-colors"
+        className="rounded-xl bg-gold px-7 py-3 text-base text-white hover:bg-bronze transition-colors"
       >
-        send via WhatsApp 透過 WhatsApp 送出
+        Send via WhatsApp 透過 WhatsApp 送出
       </button>
-      <p className="text-xs text-ink/45">送出後會開啟 WhatsApp 對話，訊息唔會儲存喺網站。</p>
+      <p className="text-sm text-ink/45">送出後會開啟 WhatsApp 對話，訊息唔會儲存喺網站。</p>
     </form>
   )
 }
