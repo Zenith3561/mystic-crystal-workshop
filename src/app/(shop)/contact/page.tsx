@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import FadeIn from '@/components/FadeIn'
 import ContactForm from '@/components/ContactForm'
-import { brand } from '@/lib/data'
+import { getSettings } from '@/lib/queries'
 
 export const metadata: Metadata = {
   title: 'contact 聯絡我們 | Mystic Crystal Workshop 神秘水晶工坊',
   description: '聯絡 Mystic Crystal Workshop — WhatsApp 即時查詢或留言給我們。',
 }
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const settings = await getSettings()
+  const whatsapp = settings.whatsapp_number
+  const email = settings.contact_email
+
   return (
     <div className="mx-auto max-w-4xl px-5 py-14">
       <FadeIn>
@@ -26,7 +30,7 @@ export default function ContactPage() {
             <div>
               <p className="text-sm tracking-[0.3em] uppercase text-gold mb-2">WhatsApp</p>
               <a
-                href={`https://wa.me/${brand.whatsapp}`}
+                href={`https://wa.me/${whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block rounded-xl bg-gold px-6 py-3 text-base text-white hover:bg-bronze transition-colors"
@@ -36,8 +40,8 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="text-sm tracking-[0.3em] uppercase text-gold mb-2">Email</p>
-              <a href={`mailto:${brand.email}`} className="text-base text-ink/75 hover:text-gold transition-colors">
-                {brand.email}
+              <a href={`mailto:${email}`} className="text-base text-ink/75 hover:text-gold transition-colors">
+                {email}
               </a>
             </div>
             <div>
@@ -48,7 +52,7 @@ export default function ContactPage() {
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <ContactForm />
+          <ContactForm whatsapp={whatsapp} />
         </FadeIn>
       </div>
     </div>

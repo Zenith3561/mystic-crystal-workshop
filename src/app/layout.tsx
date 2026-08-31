@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter, Noto_Serif_TC, Noto_Sans_TC } from "next/font/google";
 import "./globals.css";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
 import { brand } from "@/lib/data";
 
 const display = Cormorant_Garamond({
@@ -50,11 +48,7 @@ export default function RootLayout({
         } as React.CSSProperties
       }
     >
-      <body className="min-h-full flex flex-col">
-        <Nav />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }

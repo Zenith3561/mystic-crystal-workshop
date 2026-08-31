@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { brand } from '@/lib/data'
+import CartButton from '@/components/CartButton'
+import CartDrawer from '@/components/CartDrawer'
 
 const links = [
   { href: '/', en: 'Home', zh: '主頁' },
@@ -38,13 +40,16 @@ export default function Nav() {
           ))}
         </nav>
 
-        <button
-          className="md:hidden text-gold text-2xl leading-none"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? '✕' : '☰'}
-        </button>
+        <div className="flex items-center gap-5">
+          <CartButton />
+          <button
+            className="md:hidden text-gold text-2xl leading-none"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            {open ? '✕' : '☰'}
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -61,6 +66,7 @@ export default function Nav() {
           ))}
         </nav>
       )}
+      <CartDrawer />
     </motion.header>
   )
 }

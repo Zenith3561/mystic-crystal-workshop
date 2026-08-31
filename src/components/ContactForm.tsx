@@ -1,15 +1,14 @@
 'use client'
 import { useState } from 'react'
-import { brand } from '@/lib/data'
 
-export default function ContactForm() {
+export default function ContactForm({ whatsapp }: { whatsapp: string }) {
   const [name, setName] = useState('')
   const [message, setMessage] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     const text = encodeURIComponent(`你好，我係 ${name}：${message}`)
-    window.open(`https://wa.me/${brand.whatsapp}?text=${text}`, '_blank')
+    window.open(`https://wa.me/${whatsapp}?text=${text}`, '_blank')
   }
 
   return (

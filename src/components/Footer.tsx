@@ -1,7 +1,15 @@
 import Link from 'next/link'
-import { brand, collections } from '@/lib/data'
+import { brand } from '@/lib/data'
+import { getCollections, getSettings } from '@/lib/queries'
 
-export default function Footer() {
+export default async function Footer() {
+  const [collections, settings] = await Promise.all([
+    getCollections(),
+    getSettings(),
+  ])
+  const whatsapp = settings.whatsapp_number
+  const email = settings.contact_email
+
   return (
     <footer className="border-t border-gold/20 bg-cream mt-24">
       <div className="mx-auto max-w-6xl px-5 py-14 grid gap-10 md:grid-cols-3">
@@ -18,8 +26,11 @@ export default function Footer() {
           <ul className="space-y-2">
             {collections.map((c) => (
               <li key={c.slug}>
-                <Link href={`/shop?collection=${c.slug}`} className="text-base text-ink/70 hover:text-gold transition-colors">
-                  {c.nameEn} {c.nameZh}
+                <Link
+                  href={`/shop?collection=${c.slug}`}
+                  className="text-base text-ink/70 hover:text-gold transition-colors"
+                >
+                  {c.name_en} {c.name_zh}
                 </Link>
               </li>
             ))}
@@ -29,14 +40,25 @@ export default function Footer() {
         <div>
           <p className="text-base font-medium text-gold mb-4">Contact 聯絡</p>
           <ul className="space-y-2 text-base text-ink/70">
-            <li>
-              <a href={`https://wa.me/${brand.whatsapp}`} target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
-                WhatsApp 查詢
-              </a>
-            </li>
-            <li>
-              <a href={`mailto:${brand.email}`} className="hover:text-gold transition-colors">{brand.email}</a>
-            </li>
+            {whatsapp && (
+              <li>
+                <a
+                  href={`https://wa.me/${whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gold transition-colors"
+                >
+                  WhatsApp 查詢
+                </a>
+              </li>
+            )}
+            {email && (
+              <li>
+                <a href={`mailto:${email}`} className="hover:text-gold transition-colors">
+                  {email}
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       </div>
