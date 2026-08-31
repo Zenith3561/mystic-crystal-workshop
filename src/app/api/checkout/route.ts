@@ -173,7 +173,7 @@ export async function POST(request: NextRequest) {
 
   try {
     const stripe = new Stripe(stripeKey!)
-    const site = process.env.NEXT_PUBLIC_SITE_URL ?? ''
+    const site = process.env.SITE_URL ?? ''
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
       customer_email: email,
